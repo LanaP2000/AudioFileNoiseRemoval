@@ -107,3 +107,5 @@ ylabel('Amplitude');
 audiowrite('Clean_File.wav',DataOut2,Fs)
 P = audioplayer(DataOut2,Fs); % Playback the audio
 play(P)
+
+
