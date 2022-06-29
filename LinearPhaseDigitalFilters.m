@@ -32,15 +32,15 @@ Fc2 = 5300; % Second Cutoff Frequency
 flag = 'scale'; % Sampling Flag
 Beta = 0.5; % Window Parameter
 
-% Create the window vector for the design algorithm.
+% Create the window vector for the design algorithm
 win = kaiser(N+1, Beta);
 
-% Calculate the coefficients using the FIR1 function.
+% Calculate the coefficients using the FIR1 function
 b = fir1(N, [Fc1 Fc2]/(Fs/2), 'stop', win, flag);
 Hd = dfilt.dffir(b);
 freqz(Hd,N) % Frequency Response of First Filter
 
-%Applying Filter to the signal
+% Applying Filter to the signal
 DataOut = filter(Hd,audio_raw);
 z=fftshift(fft(DataOut));
 
@@ -58,10 +58,10 @@ Fc2 = 4000; % Second Cutoff Frequency
 flag = 'scale'; % Sampling Flag
 Beta = 0.5; % Window Parameter
 
-% Create the window vector for the design algorithm.
+% Create the window vector for the design algorithm
 win = kaiser(N+1, Beta);
 
-% Calculate the coefficients using the FIR1 function.
+% Calculate the coefficients using the FIR1 function
 b = fir1(N, [Fc1 Fc2]/(Fs/2), 'stop', win, flag);
 Hd = dfilt.dffir(b);
 freqz(Hd,N) % Frequency Response of Second Filter
@@ -81,9 +81,9 @@ Fc = 200; % Cutoff Frequency
 flag = 'scale'; % Sampling Flag
 Beta = 0.5; % Window Parameter
 
-% Create the window vector for the design algorithm.
+% Create the window vector for the design algorithm
 win = kaiser(N+1, Beta);
-% Calculate the coefficients using the FIR1 function.
+% Calculate the coefficients using the FIR1 function
 b = fir1(N, Fc/(Fs/2), 'high', win, flag);
 Hd = dfilt.dffir(b);
 freqz(Hd,N) % Frequency Response of Third Filter
