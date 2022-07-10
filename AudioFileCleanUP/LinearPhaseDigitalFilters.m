@@ -1,3 +1,6 @@
+close all;
+clear all;
+clc;
 
 [audio_raw,Fs]=audioread('Star_Wars.wav'); % Audio File Input
 [N, P] = size(audio_raw); % File Size checking
