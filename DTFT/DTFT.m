@@ -1,6 +1,6 @@
-close all
-clear all
-clc
+close all;
+clear all;
+clc;
 
 %% DTFT of x[n] = (0.5)^n(u[n])
 omega1 = 0:pi/1024:pi-(pi/1024);
