@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-`define WL_Add (WL1 > WL2) ? (WL1 + 1) : (WL2 + 1)
+`define WL_Add  (WL1 > WL2) ? (WL1 + 1) : (WL2 + 1)
 `define WL_Mult (WL1 > WL2) ? (2 * WL1) : (2 * WL2)
 
 module FIRFilter #(parameter WL1 = 4, WL2 = 4, WL = 4,
